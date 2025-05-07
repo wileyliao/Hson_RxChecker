@@ -13,7 +13,7 @@ payload = {
         "eff_order": [
             {
                 "MED_BAG_SN": "7;20250421;0001410815;1;STAT;IVD;1;0;20250421003843383",
-                "DOC": "False",
+                "DOC": "True",
                 "PATNAME": "True",
                 "SECTNO": "心臟科",
                 "order": [
@@ -30,6 +30,38 @@ payload = {
                         "TXN_QTY": "1",
                         "FREQ": "STAT",
                         "DAYS": "21",
+                        "SD": "3",
+                        "DUNIT": "BTL"
+                    },
+{
+                        "CTYPE": "自費",
+                        "NAME": "Moriamin-SN inj. 200ml",
+                        "CODE": "OMIF",
+                        "HI_CODE": "AC24029263",
+                        "TYPE": "膜衣錠",
+                        "ATC": "B05BA01",
+                        "LICENSE": "",
+                        "DIANAME": "Moriamin-SN 200ml",
+                        "DRUGKIND": "4",
+                        "TXN_QTY": "1",
+                        "FREQ": "STAT",
+                        "DAYS": "1",
+                        "SD": "3",
+                        "DUNIT": "BTL"
+                    },
+{
+                        "CTYPE": "自費",
+                        "NAME": "Moriamin-SN inj. 200ml",
+                        "CODE": "OMIF",
+                        "HI_CODE": "AC24029263",
+                        "TYPE": "膜衣錠",
+                        "ATC": "B05BA01",
+                        "LICENSE": "",
+                        "DIANAME": "Moriamin-SN 200ml",
+                        "DRUGKIND": "4",
+                        "TXN_QTY": "1",
+                        "FREQ": "STAT",
+                        "DAYS": "1",
                         "SD": "3",
                         "DUNIT": "BTL"
                     },
@@ -237,6 +269,8 @@ response = requests.post(url, headers=headers, data=json.dumps(payload))
 if response.status_code == 200:
     # 解析回傳的 JSON 資料
     response_data = response.json()
-    print("回傳資料：", json.dumps(response_data, indent=4, ensure_ascii=False))
+    print("回傳資料：\n" + json.dumps(response_data, indent=4, ensure_ascii=False))
+    print("response：\n" + response_data.get("response", "").replace("\\n", "\n"))
+
 else:
     print("API 請求失敗，狀態碼：", response.status_code)

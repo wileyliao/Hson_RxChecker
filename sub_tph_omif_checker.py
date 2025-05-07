@@ -1,4 +1,12 @@
 def omif_checker(order, messages, error_type):
+    """
+        藥品Lorapseudo SR 120mg/5mg(藥品碼OMIF)規定：
+            1. 自費
+                --> 總量最多60粒，天數最多30日
+            2. 健保
+                --> 1天最多2粒。
+
+    """
     sd = float(order.get("SD", 0))
     days = int(order.get("DAYS", 0))
     qty = int(order.get("TXN_QTY", 0))
