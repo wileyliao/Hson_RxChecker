@@ -1,9 +1,9 @@
 # rx_checker_app.py
 
-import pandas as pd
-from dotenv import load_dotenv
-import os
-from openai import OpenAI
+# import pandas as pd
+# from dotenv import load_dotenv
+# import os
+# from openai import OpenAI
 import json
 from flask import Flask, request, jsonify
 
@@ -36,7 +36,7 @@ def med_gpt_main():
             messages, error_type = tph_policy_02(order, messages, error_type)
 
     if messages:
-        local_prompt = "\n".join([f"{i+1}. {msg}" for i, msg in enumerate(messages)])
+        local_prompt = "\n".join([f"{i+1}. {msg}" for i, msg in enumerate(list(set(messages)))])
 
     result_dict = {
         "MED_BAG_SN": bag.get("MED_BAG_SN"),
