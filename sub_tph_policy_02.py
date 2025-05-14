@@ -4,9 +4,7 @@ def tph_policy_02(order, messages, error_type):
     """
         口服藥品不能只開立一天
     """
-    if order.get("TYPE") in ["注射藥", "點滴"]:
-        return messages, error_type
-    if int(order.get('DAYS', 0)) == 1:
+    if int(order.get('DAYS', 0)) == 1 and "內用" in order.get("TYPE", ""):
         messages.append(
             f"{order.get('DIANAME') or order.get('NAME')}，頻次：{order.get('FREQ', '')}，"
             f"每次{float(order.get('SD', 0))}粒，總量：{order.get('TXN_QTY', '')}粒，天數 {int(order.get('DAYS', 0))} 天。"
