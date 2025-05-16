@@ -17,7 +17,7 @@ def tph_policy_01(order, bag, messages, error_type):
             3. 醫師不得為自己開立管制藥品
     """
     max_days = 30 if bag.get("SECTNO") == "精神科" else 7
-    is_foreign_patient = bag.get("PATNAME") == "True"
+    is_foreign_patient = bag.get("PATNAME")
 
     # Step 1: 藥品類型過濾
     if order.get("TYPE") in ["注射藥", "點滴"]:
@@ -47,7 +47,7 @@ def tph_policy_01(order, bag, messages, error_type):
     # ==================================================
 
     # Step 3: 病人國籍判斷
-    if is_foreign_patient:
+    if is_foreign_patient == 'True':
         if order.get("CTYPE", "") != "自費":
             return messages, error_type
 
