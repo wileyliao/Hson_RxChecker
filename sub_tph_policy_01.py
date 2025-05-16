@@ -38,16 +38,18 @@ def tph_policy_01(order, bag, messages, error_type):
             continue
         control_drug_count += 1
 
-    max_control_types = 2 if bag.get("SECTNO") == "精神科" else 1
-    if control_drug_count > max_control_types:
-        if not bag.get("_warned_control_type_limit", False):
-            messages.append(f"此處方開立了 {control_drug_count} 種管制藥品，依據相關規定{bag.get('SECTNO')}最多開立 {max_control_types} 種。")
-            error_type.append("I其他")
-            bag["_warned_control_type_limit"] = True
     # ==================================================
 
     # Step 3: 病人國籍判斷
     if is_foreign_patient == 'True':
+        max_control_types = 2 if bag.get("SECTNO") == "精神科" else 1
+        if control_drug_count > max_control_types:
+            if not bag.get("_warned_control_type_limit", False):
+                messages.append(
+                    f"此處方開立了 {control_drug_count} 種管制藥品，依據相關規定{bag.get('SECTNO')}最多開立 {max_control_types} 種。")
+                error_type.append("I其他")
+                bag["_warned_control_type_limit"] = True
+
         if order.get("CTYPE", "") != "自費":
             return messages, error_type
 
