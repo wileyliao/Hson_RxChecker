@@ -6,10 +6,8 @@
 # from openai import OpenAI
 import json
 from flask import Flask, request, jsonify
-
-from sub_tph_omif_checker import *
-from sub_tph_policy_01 import *
-from sub_tph_policy_02 import *
+from rx_checker_main import main
+from rule_get import get_rule_state
 
 app = Flask(__name__)
 
@@ -20,28 +18,22 @@ traditional_prompt = f"\n請以繁體中文回覆。"
 EXCEPTION_DRUGS = []
 
 @app.route('/medgpt', methods=['POST'])
-def med_gpt_main():
-    messages = []
-    error_type = []
+def rx_checker_app():
+    rx = request.get_json()
+    rule_state = get_rule_state()
+
     local_prompt = None
 
-    json_data = request.get_json()
-
-    for bag in json_data.get("Data", {}).get("eff_order", []):
-        for order in bag.get("order", []):
-            if order.get("CODE", "") == "OMIF":
-                messages, error_type = omif_checker(order, messages, error_type)
-
-            messages, error_type = tph_policy_01(order, bag, messages, error_type)
-            messages, error_type = tph_policy_02(order, messages, error_type)
+    messages, error_types, error_rules = main(rx, rule_state)
 
     if messages:
         local_prompt = "\n".join([f"{i+1}. {msg}" for i, msg in enumerate(list(set(messages)))])
 
     result_dict = {
-        "MED_BAG_SN": bag.get("MED_BAG_SN"),
+        "MED_BAG_SN": rx["Data"]["eff_order"][0]["MED_BAG_SN"],
         "error": str(bool(messages)),
-        "error_type": list(set(error_type)),
+        "error_type": list(set(error_types)),
+        "rule": error_rules,
         "response": local_prompt
     }
 
@@ -49,4 +41,4 @@ def med_gpt_main():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
