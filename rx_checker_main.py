@@ -15,4 +15,7 @@ def main(rx, rule_state):
 
     messages, error_type, error_rule = omif_checker(rule_state, rx, messages, error_type, error_rule)
 
+    messages, error_type, error_rule = diabetes_checker(rule_state, rx, messages, error_type, error_rule)
+    messages, error_type, error_rule = airway_disease_checker(rule_state, rx, messages, error_type, error_rule)
+
     return messages, error_type, error_rule
