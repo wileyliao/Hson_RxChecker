@@ -33,7 +33,7 @@ def rx_checker():
         "MED_BAG_SN": rx["Data"]["eff_order"][0]["MED_BAG_SN"],
         "error": str(bool(messages)),
         "error_type": list(set(error_types)),
-        "rule": error_rules,
+        "rule_type": error_rules,
         "response": local_prompt
     }
 
