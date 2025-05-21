@@ -122,7 +122,6 @@ def diabetes_checker(rule_state, rx, messages, error_type, error_rule):
             for bag in rx.get("Data", {}).get("eff_order", []):
                 for order in bag.get("order", []):
                     if (order.get('ATC', "")).startswith('A10'):
-                        print('抓到了')
                         messages.append(
                             f"{order.get('DIANAME') or order.get('NAME')}，頻次：{order.get('FREQ', '')}，"
                             f"每次{float(order.get('SD', 0))}粒，總量：{order.get('TXN_QTY', '')}粒，天數 {int(order.get('DAYS', 0))} 天。"

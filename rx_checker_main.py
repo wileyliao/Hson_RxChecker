@@ -6,16 +6,22 @@ def main(rx, rule_state):
     messages = []
     error_rule = []
 
-    messages, error_type, error_rule = oral_drug_checker(rule_state, rx, messages, error_type, error_rule)
-    messages, error_type, error_rule = insured_cannot_selfpay(rule_state, rx, messages, error_type, error_rule)
-    messages, error_type, error_rule = foreign_control_drug_limit(rule_state, rx, messages, error_type, error_rule)
-    messages, error_type, error_rule = foreign_max_days(rule_state, rx, messages, error_type, error_rule)
-    messages, error_type, error_rule = foreign_max_dosage(rule_state, rx, messages, error_type, error_rule)
-    messages, error_type, error_rule = doctor_cannot_prescribe_self(rule_state, rx, messages, error_type, error_rule)
+    rule_functions = [
+        oral_drug_checker,
+        insured_cannot_selfpay,
+        foreign_control_drug_limit,
+        foreign_max_days,
+        foreign_max_dosage,
+        doctor_cannot_prescribe_self,
+        omif_checker,
+        diabetes_checker,
+        airway_disease_checker
+    ]
 
-    messages, error_type, error_rule = omif_checker(rule_state, rx, messages, error_type, error_rule)
-
-    messages, error_type, error_rule = diabetes_checker(rule_state, rx, messages, error_type, error_rule)
-    messages, error_type, error_rule = airway_disease_checker(rule_state, rx, messages, error_type, error_rule)
+    for func in rule_functions:
+        try:
+            messages, error_type, error_rule = func(rule_state, rx, messages, error_type, error_rule)
+        except Exception as e:
+            print(f"Error in {func.__name__}: {e}")
 
     return messages, error_type, error_rule
