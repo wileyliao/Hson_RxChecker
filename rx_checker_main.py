@@ -1,5 +1,7 @@
-from sub_rules import *
-from sub_tph_omif_checker import omif_checker
+from sub_rules_adc import *
+from sub_rules_oral import *
+from sub_rules_omif import *
+from sub_rules_clinical import *
 
 def main(rx, rule_state):
     error_type = []
