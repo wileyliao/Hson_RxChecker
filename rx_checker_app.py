@@ -18,7 +18,7 @@ traditional_prompt = f"\n請以繁體中文回覆。"
 EXCEPTION_DRUGS = []
 
 @app.route('/medgpt', methods=['POST'])
-def rx_checker_app():
+def rx_checker():
     rx = request.get_json()
     rule_state = get_rule_state()
 
