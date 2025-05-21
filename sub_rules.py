@@ -17,7 +17,7 @@ def insured_cannot_selfpay(rx, messages, error_type, error_rule):
 def foreign_control_drug_limit(rx, messages, error_type, error_rule):
     rule = "ADC-2"
     for bag in rx.get("Data", {}).get("eff_order", []):
-        if bag.get("PATNAME") == "False":
+        if bag.get("PATNAME") == "True":
             control_drug_count = len(bag.get("order", []))
             max_control_types = 2 if bag.get("SECTNO") == "精神科" else 1
 
