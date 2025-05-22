@@ -1,6 +1,6 @@
 def insured_cannot_selfpay(rule_state, rx, messages, error_type, error_rule):
     rule = "ADC-1"
-    if rule_state.get(rule) == 'true':
+    if rule_state.get(rule) == 'True':
 
         for bag in rx.get("Data", {}).get("eff_order", []):
             for order in bag.get("order", []):
@@ -18,7 +18,7 @@ def insured_cannot_selfpay(rule_state, rx, messages, error_type, error_rule):
 
 def foreign_control_drug_limit(rule_state, rx, messages, error_type, error_rule):
     rule = "ADC-2"
-    if rule_state.get(rule) == 'true':
+    if rule_state.get(rule) == 'True':
         for bag in rx.get("Data", {}).get("eff_order", []):
             if bag.get("PATNAME") == "True":
                 non_omif_orders = [order for order in bag.get("order", []) if order.get("CODE", "") != "OMIF"]
@@ -46,7 +46,7 @@ def foreign_control_drug_limit(rule_state, rx, messages, error_type, error_rule)
 
 def foreign_max_days(rule_state, rx, messages, error_type, error_rule):
     rule = "ADC-3"
-    if rule_state.get(rule) == 'true':
+    if rule_state.get(rule) == 'True':
         for bag in rx.get("Data", {}).get("eff_order", []):
             if bag.get("PATNAME") == "True":
                 max_days = 30 if bag.get("SECTNO") == "精神科" else 7
@@ -65,7 +65,7 @@ def foreign_max_days(rule_state, rx, messages, error_type, error_rule):
 
 def foreign_max_dosage(rule_state, rx, messages, error_type, error_rule):
     rule = "ADC-4"
-    if rule_state.get(rule) == 'true':
+    if rule_state.get(rule) == 'True':
         for bag in rx.get("Data", {}).get("eff_order", []):
             if bag.get("PATNAME") == "True":
                 for order in bag.get("order", []):
@@ -83,7 +83,7 @@ def foreign_max_dosage(rule_state, rx, messages, error_type, error_rule):
 
 def doctor_cannot_prescribe_self(rule_state, rx, messages, error_type, error_rule):
     rule = "ADC-5"
-    if rule_state.get(rule) == 'true':
+    if rule_state.get(rule) == 'True':
         for bag in rx.get("Data", {}).get("eff_order", []):
             if bag.get("DOC") == "True":
                 for order in bag.get("order", []):

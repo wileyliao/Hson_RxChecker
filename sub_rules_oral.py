@@ -1,7 +1,7 @@
 def oral_drug_checker(rule_state, rx, messages, error_type, error_rule):
     # BRYPE中 PHER = 急診, 首日量 & stat = 住院, OPD = 門診
     rule = "ORAL-1"
-    if rule_state.get(rule) == 'true':
+    if rule_state.get(rule) == 'True':
         for bag in rx.get("Data", {}).get("eff_order", []):
             if bag.get("BRYPE", "") == "OPD":
                 for order in bag.get("order", []):

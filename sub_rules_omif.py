@@ -8,7 +8,7 @@ def omif_checker(rule_state, rx, messages, error_type, error_rule):
 
     """
     rule = 'Other-1'
-    if rule_state.get(rule) == 'true':
+    if rule_state.get(rule) == 'True':
         for bag in rx.get("Data", {}).get("eff_order", []):
             for order in bag.get("order", []):
 

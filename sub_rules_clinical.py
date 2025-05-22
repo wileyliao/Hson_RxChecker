@@ -1,7 +1,7 @@
 def diabetes_checker(rule_state, rx, messages, error_type, error_rule):
     rule = "CLIN-1"
     diabetes_icd_code = ["E08", "E09", "E10", "E11", "E12", "E13", "O24"]
-    if rule_state.get(rule) == 'true':
+    if rule_state.get(rule) == 'True':
         icd = rx.get("Data", {}).get("eff_order", [])[0].get("ICD_CODE").split(';')
         if  not any(code.startswith(prefix) for code in icd for prefix in diabetes_icd_code):
             for bag in rx.get("Data", {}).get("eff_order", []):
@@ -20,7 +20,7 @@ def diabetes_checker(rule_state, rx, messages, error_type, error_rule):
 def airway_disease_checker(rule_state, rx, messages, error_type, error_rule):
     rule = "CLIN-2"
     diabetes_icd_code = ["J41", "J42", "J43", "J44", "J45"]
-    if rule_state.get(rule) == 'true':
+    if rule_state.get(rule) == 'True':
         icd = rx.get("Data", {}).get("eff_order", [])[0].get("ICD_CODE").split(';')
         if  any(code.startswith(prefix) for code in icd for prefix in diabetes_icd_code):
             for bag in rx.get("Data", {}).get("eff_order", []):
