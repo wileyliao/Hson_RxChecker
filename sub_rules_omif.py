@@ -25,32 +25,24 @@ def omif_checker(rule_state, rx, messages, error_type, error_rule):
                     if ctype == "自費":
                         if daily_dose > 2:
                             messages.append(f"{order.get('DIANAME') or order.get('NAME')}，頻次：{order.get('FREQ', '')}，"
-                                            f"每次{order.get('SD', '')}粒，總量：{order.get('TXN_QTY', '')}粒，天數 {int(order.get('DAYS', 0))} 天。"
+                                            f"每次{order.get('SD', '')} {order.get('DUNIT', '')}，總量：{order.get('TXN_QTY', '')} {order.get('DUNIT', '')}，天數 {int(order.get('DAYS', 0))} 天。"
                                             f"依據相關規定，{order.get('DIANAME') or order.get('NAME')} 為自費時每日服用劑量超過上限 (每日最多 2 顆)，"
                                             f"電聯醫師修改。")
                             error_type.append("C劑量錯誤")
                             error_rule.append(rule)
                         if days > 30:
                             messages.append(f"{order.get('DIANAME') or order.get('NAME')}，頻次：{order.get('FREQ', '')}，"
-                                            f"每次{order.get('SD', '')}粒，總量：{order.get('TXN_QTY', '')}粒，天數 {int(order.get('DAYS', 0))} 天。"
+                                            f"每次{order.get('SD', '')} {order.get('DUNIT', '')}，總量：{order.get('TXN_QTY', '')} {order.get('DUNIT', '')}，天數 {int(order.get('DAYS', 0))} 天。"
                                             f"依據相關規定，{order.get('DIANAME') or order.get('NAME')} 為自費時給藥天數超過 30 日限制，"
                                             f"電聯醫師修改。")
                             error_type.append("F數量錯誤")
                             error_rule.append(rule)
                         if qty > 60:
                             messages.append(f"{order.get('DIANAME') or order.get('NAME')}，頻次：{order.get('FREQ', '')}，"
-                                            f"每次{order.get('SD', '')}粒，總量：{order.get('TXN_QTY', '')}粒，天數 {int(order.get('DAYS', 0))} 天。"
+                                            f"每次{order.get('SD', '')} {order.get('DUNIT', '')}，總量：{order.get('TXN_QTY', '')} {order.get('DUNIT', '')}，天數 {int(order.get('DAYS', 0))} 天。"
                                             f"依據相關規定，{order.get('DIANAME') or order.get('NAME')} 為自費時總顆數超過 60 粒限制，"
                                             f"電聯醫師修改。")
                             error_type.append("F數量錯誤")
-                            error_rule.append(rule)
-                    elif ctype == "健保":
-                        if daily_dose > 2:
-                            messages.append(f"{order.get('DIANAME') or order.get('NAME')}，頻次：{order.get('FREQ', '')}，"
-                                            f"每次{order.get('SD', '')}粒，總量：{order.get('TXN_QTY', '')}粒，天數 {int(order.get('DAYS', 0))} 天。"
-                                            f"依據相關規定，{order.get('DIANAME') or order.get('NAME')} 為健保時每日服用劑量超過上限 (每日最多 2 顆)，"
-                                            f"電聯醫師修改。")
-                            error_type.append("C劑量錯誤")
                             error_rule.append(rule)
 
     return messages, error_type, error_rule
