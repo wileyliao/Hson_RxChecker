@@ -31,6 +31,6 @@ def airway_disease_checker(rule_state, rx, messages, error_type, error_rule):
                             f"每次{float(order.get('SD', 0))}粒，總量：{order.get('TXN_QTY', '')}粒，天數 {int(order.get('DAYS', 0))} 天。"
                             f"氣喘或是慢性肺阻塞疾病診斷，不建議使用β受體阻斷劑。"
                         )
-                        error_type.append("O其他")
+                        error_type.append("O其他-藥物選用適切性")
                         error_rule.append(rule)
     return messages, error_type, error_rule
