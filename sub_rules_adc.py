@@ -11,7 +11,7 @@ def insured_cannot_selfpay(rule_state, rx, messages, error_type, error_rule):
                             f"每次{float(order.get('SD', 0))}粒，總量：{order.get('TXN_QTY', '')}粒，天數 {int(order.get('DAYS', 0))} 天。"
                             f"依據相關規定，具健保身分的病人，不得自費開立管制藥品，"
                             f"電聯醫師修改。")
-                        error_type.append("I其他")
+                        error_type.append("O其他")
                         error_rule.append(rule)
     return messages, error_type, error_rule
 
@@ -38,7 +38,7 @@ def foreign_control_drug_limit(rule_state, rx, messages, error_type, error_rule)
                         f"依據相關規定，無健保身分在{bag.get('SECTNO')}最多開立 {max_control_types} 種管制藥品。"
                         f"電聯醫師修改"
                     )
-                    error_type.append("I其他")
+                    error_type.append("O其他")
                     error_rule.append(rule)
                     bag["_warned_control_type_limit"] = True
     return messages, error_type, error_rule
@@ -93,6 +93,6 @@ def doctor_cannot_prescribe_self(rule_state, rx, messages, error_type, error_rul
                             f"每次{float(order.get('SD', 0))}粒，總量：{order.get('TXN_QTY', '')}粒，天數 {int(order.get('DAYS', 0))} 天。"
                             f"依據相關規定，醫師不得為本人開立管制藥品，"
                             f"電聯醫師修改。")
-                        error_type.append("I其他")
+                        error_type.append("O其他")
                         error_rule.append(rule)
     return messages, error_type, error_rule
