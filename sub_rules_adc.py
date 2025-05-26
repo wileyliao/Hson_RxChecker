@@ -21,8 +21,8 @@ def foreign_control_drug_limit(rule_state, rx, messages, error_type, error_rule)
     if rule_state.get(rule) == 'True':
         for bag in rx.get("Data", {}).get("eff_order", []):
             if bag.get("PATNAME") == "True":
-                non_omif_orders = [order for order in bag.get("order", []) if order.get("CODE", "") != "OMIF"]
-                control_drug_count = len(bag.get("order", []))
+                non_omif_orders = [order for order in bag.get("order", []) if order.get("CODE", "") != "OMIF" and order.get("DRUGKIND", "") != "N"]
+                control_drug_count = len(non_omif_orders)
                 max_control_types = 2 if bag.get("SECTNO") == "精神科" else 1
 
                 if control_drug_count > max_control_types and not bag.get("_warned_control_type_limit", False):
