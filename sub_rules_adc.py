@@ -4,7 +4,7 @@ def insured_cannot_selfpay(rule_state, rx, messages, error_type, error_rule):
 
         for bag in rx.get("Data", {}).get("eff_order", []):
             for order in bag.get("order", []):
-                if "內用" in order.get("TYPE", "") and order.get("DRUGKIND") != "N" and order.get("CODE", "") != "OMIF":
+                if order.get("DRUGKIND") != "N" and order.get("CODE", "") != "OMIF":
                     if bag.get("PATNAME") == "False" and order.get("CTYPE", "") == "自費":
                         messages.append(
                             f"{order.get('DIANAME') or order.get('NAME')}，頻次：{order.get('FREQ', '')}，"
