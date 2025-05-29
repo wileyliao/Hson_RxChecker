@@ -65,6 +65,9 @@
             "ADC-5"
         ]
     },
+    "Batch_API_results.txt": {
+        "error": "API 失敗，狀態碼：500"
+    },
     "CLIN-1.txt": {
         "MED_BAG_SN": "1140006764202505171141071;7237;ORIT1;0002375555",
         "error": "True",
