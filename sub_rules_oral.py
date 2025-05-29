@@ -1,3 +1,5 @@
+from common_message_generator import generate_common_drug_message
+
 def oral_drug_checker(rule_state, rx, messages, error_type, error_rule):
     # BRYPE中 PHER = 急診, 首日量 & stat = 住院, OPD = 門診
     rule = "ORAL-1"
@@ -7,8 +9,7 @@ def oral_drug_checker(rule_state, rx, messages, error_type, error_rule):
                 for order in bag.get("order", []):
                     if int(order.get('DAYS', 0)) == 1 and "內用" in order.get("TYPE", "") and order.get("CODE", "") != "OMIF":
                         messages.append(
-                            f"{order.get('DIANAME') or order.get('NAME')}，頻次：{order.get('FREQ', '')}，"
-                            f"每次{float(order.get('SD', 0))} {order.get('DUNIT', '')}，總量：{order.get('TXN_QTY', '')} {order.get('DUNIT', '')}，天數 {int(order.get('DAYS', 0))} 天。"
+                            f"{generate_common_drug_message(order)}，"
                             f"處方開立天數錯誤，藥品總量錯誤，電聯醫師修改處方天數與藥品數量。"
                         )
                         error_type.append("F數量錯誤")

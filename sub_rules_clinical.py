@@ -1,3 +1,5 @@
+from common_message_generator import generate_common_drug_message
+
 def diabetes_checker(rule_state, rx, messages, error_type, error_rule):
     rule = "CLIN-1"
     diabetes_icd_code = ["E08", "E09", "E10", "E11", "E12", "E13", "O24"]
@@ -8,8 +10,7 @@ def diabetes_checker(rule_state, rx, messages, error_type, error_rule):
                 for order in bag.get("order", []):
                     if (order.get('ATC', "")).startswith('A10'):
                         messages.append(
-                            f"{order.get('DIANAME') or order.get('NAME')}，頻次：{order.get('FREQ', '')}，"
-                            f"每次{float(order.get('SD', 0))} {order.get('DUNIT', '')}，總量：{order.get('TXN_QTY', '')} {order.get('DUNIT', '')}，天數 {int(order.get('DAYS', 0))} 天。"
+                            f"{generate_common_drug_message(order)}，"
                             f"非糖尿病診斷，電聯醫師確認處方與診斷，確認是否開立該藥品。"
                         )
                         error_type.append("I適應症錯誤")
@@ -27,8 +28,7 @@ def airway_disease_checker(rule_state, rx, messages, error_type, error_rule):
                 for order in bag.get("order", []):
                     if (order.get('ATC', "")).startswith('C07AB'):
                         messages.append(
-                            f"{order.get('DIANAME') or order.get('NAME')}，頻次：{order.get('FREQ', '')}，"
-                            f"每次{float(order.get('SD', 0))} {order.get('DUNIT', '')}，總量：{order.get('TXN_QTY', '')} {order.get('DUNIT', '')}，天數 {int(order.get('DAYS', 0))} 天。"
+                            f"{generate_common_drug_message(order)}，"
                             f"氣喘或是慢性肺阻塞疾病診斷，不建議使用β受體阻斷劑。"
                         )
                         error_type.append("O其他-藥物選用適切性")
@@ -44,9 +44,7 @@ def pregnancy_drug_risk(rule_state, rx, messages, error_type, error_rule):
                 for order in bag.get("order", []):
                     if order.get("PREGNANCY_LEVEL", "") in drug_risk:
                         messages.append(
-                            f"{order.get('DIANAME') or order.get('NAME')}，頻次：{order.get('FREQ', '')}，"
-                            f"每次{float(order.get('SD', 0))} {order.get('DUNIT', '')}，總量：{order.get('TXN_QTY', '')} "
-                            f"{order.get('DUNIT', '')}，天數 {int(order.get('DAYS', 0))} 天，"
+                            f"{generate_common_drug_message(order)}，"
                             f"懷孕風險藥物分級為 {order.get('PREGNANCY_LEVEL', '')}。"
                             f"本處方的病人為孕婦，請醫師審慎評估使用必要性，避免對胎兒造成潛在風險。"
                             f"電聯醫師修改。")
