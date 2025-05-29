@@ -10,7 +10,7 @@ def get_rule_state():
         "Content-Type": "application/json"
     }
 
-    response = requests.post(url, headers=headers, data=json.dumps(payload))
+    response = requests.post(url, headers=headers, data=json.dumps(payload),verify=False)
 
     response_data = response.json()
     index_state_map = {

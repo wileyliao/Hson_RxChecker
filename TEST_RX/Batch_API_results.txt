@@ -112,38 +112,7 @@
             "ORAL-1"
         ]
     },
-    "order2.0_IDC.txt": {
-        "MED_BAG_SN": "1140006764202505171141071;7237;ORIT1;0002375555",
-        "error": "False",
-        "error_type": [],
-        "response": null,
-        "rule_type": []
-    },
-    "order2.0_診別.txt": {
-        "MED_BAG_SN": "1140006764202505171141071;7237;ORIT1;0002375555",
-        "error": "True",
-        "error_type": [
-            "F數量錯誤",
-            "O其他"
-        ],
-        "response": "1. Valdoxan 25mg，頻次：HS，每次1.0 TAB，總量：1 TAB，天數 1 天，依據相關規定，具健保身分的病人，不得自費開立管制藥品，電聯醫師修改。\n2. Valdoxan 25mg，頻次：HS，每次1.0 TAB，總量：1 TAB，天數 1 天，處方開立天數錯誤，藥品總量錯誤，電聯醫師修改處方天數與藥品數量。\n3. Ligilin 300mg，頻次：QAM&HS，每次1.0 CAP，總量：1 CAP，天數 1 天，處方開立天數錯誤，藥品總量錯誤，電聯醫師修改處方天數與藥品數量。\n4. Akin 2mg，頻次：HS，每次1.0 TAB，總量：1 TAB，天數 1 天，處方開立天數錯誤，藥品總量錯誤，電聯醫師修改處方天數與藥品數量。\n5. 管3 Fluzepam 2mg，頻次：HS，每次1.0 TAB，總量：1 TAB，天數 1 天，處方開立天數錯誤，藥品總量錯誤，電聯醫師修改處方天數與藥品數量。\n6. 管3 Ritalin 10mg，頻次：QD，每次1.0 TAB，總量：1 TAB，天數 1 天，處方開立天數錯誤，藥品總量錯誤，電聯醫師修改處方天數與藥品數量。",
-        "rule_type": [
-            "ORAL-1",
-            "ADC-1"
-        ]
-    },
-    "Other-1_健保.txt": {
-        "MED_BAG_SN": "7;20250421;0001410815;1;STAT;IVD;1;0;20250421003843383",
-        "error": "True",
-        "error_type": [
-            "C劑量錯誤"
-        ],
-        "response": "1. Moriamin-SN inj. 200ml，頻次：STAT，每次3.0 BTL，總量：6 BTL，天數 1 天，依據相關規定，Moriamin-SN inj. 200ml 為自費時每日服用劑量超過上限 (每日最多 2 顆)，電聯醫師修改。",
-        "rule_type": [
-            "Other-1"
-        ]
-    },
-    "Other-1_自費.txt": {
+    "Other-1.txt": {
         "MED_BAG_SN": "7;20250421;0001410815;1;STAT;IVD;1;0;20250421003843383",
         "error": "True",
         "error_type": [
