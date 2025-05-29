@@ -1,0 +1,203 @@
+{
+    "Data": {
+        "eff_order": [
+            {
+                "MED_BAG_SN": "1140006764202505171141071;7237;ORIT1;0002375555",
+                "DOC": "False",
+                "PATNAME": "False",
+                "SECTNO": "精神科",
+                "order": [
+                    {
+                        "CTYPE": "健保",
+                        "NAME": "Valdoxan 25mg",
+                        "CODE": "OAGO",
+                        "HI_CODE": "BC25451100",
+                        "TYPE": "內用藥錠劑",
+                        "ATC": "N06AX22",
+                        "LICENSE": "",
+                        "DIANAME": "Agomelatine 25mg",
+                        "DRUGKIND": "N",
+                        "TXN_QTY": "1",
+                        "FREQ": "HS",
+                        "DAYS": "1",
+                        "SD": "1",
+                        "DUNIT": "TAB"
+                    },
+                    {
+                        "CTYPE": "健保",
+                        "NAME": "Ligilin 300mg",
+                        "CODE": "OLIT",
+                        "HI_CODE": "AC09299100",
+                        "TYPE": "內用藥錠劑",
+                        "ATC": "N05AN01",
+                        "LICENSE": "",
+                        "DIANAME": "Lithium carbonate 300mg",
+                        "DRUGKIND": "N",
+                        "TXN_QTY": "1",
+                        "FREQ": "QAM&HS",
+                        "DAYS": "1",
+                        "SD": "1",
+                        "DUNIT": "CAP"
+                    },
+                    {
+                        "CTYPE": "健保",
+                        "NAME": "Ligilin 300mg",
+                        "CODE": "OLIT",
+                        "HI_CODE": "AC09299100",
+                        "TYPE": "內用藥錠劑",
+                        "ATC": "N05AN01",
+                        "LICENSE": "",
+                        "DIANAME": "Lithium carbonate 300mg",
+                        "DRUGKIND": "N",
+                        "TXN_QTY": "1",
+                        "FREQ": "QAM&HS",
+                        "DAYS": "1",
+                        "SD": "1",
+                        "DUNIT": "CAP"
+                    },
+                    {
+                        "CTYPE": "健保",
+                        "NAME": "Ligilin 300mg",
+                        "CODE": "OLIT",
+                        "HI_CODE": "AC09299100",
+                        "TYPE": "內用藥錠劑",
+                        "ATC": "N05AN01",
+                        "LICENSE": "",
+                        "DIANAME": "Lithium carbonate 300mg",
+                        "DRUGKIND": "N",
+                        "TXN_QTY": "1",
+                        "FREQ": "QAM&HS",
+                        "DAYS": "1",
+                        "SD": "1",
+                        "DUNIT": "CAP"
+                    },
+                    {
+                        "CTYPE": "健保",
+                        "NAME": "Akin 2mg",
+                        "CODE": "OAKI2",
+                        "HI_CODE": "AC386501G0",
+                        "TYPE": "內用藥錠劑",
+                        "ATC": "N04AA02",
+                        "LICENSE": "",
+                        "DIANAME": "Biperiden 2mg",
+                        "DRUGKIND": "N",
+                        "TXN_QTY": "1",
+                        "FREQ": "HS",
+                        "DAYS": "1",
+                        "SD": "1",
+                        "DUNIT": "TAB"
+                    },
+                    {
+                        "CTYPE": "健保",
+                        "NAME": "管3 Ritalin 10mg",
+                        "CODE": "ORIT1",
+                        "HI_CODE": "BC27080100",
+                        "TYPE": "內用藥錠劑",
+                        "ATC": "N06BA04",
+                        "LICENSE": "",
+                        "DIANAME": "Methylphenidate 10mg",
+                        "DRUGKIND": "3",
+                        "TXN_QTY": "1",
+                        "FREQ": "QD",
+                        "DAYS": "1",
+                        "SD": "1",
+                        "DUNIT": "TAB"
+                    },
+                    {
+                        "CTYPE": "健保",
+                        "NAME": "Akin 2mg",
+                        "CODE": "OAKI2",
+                        "HI_CODE": "AC386501G0",
+                        "TYPE": "內用藥錠劑",
+                        "ATC": "N04AA02",
+                        "LICENSE": "",
+                        "DIANAME": "Biperiden 2mg",
+                        "DRUGKIND": "N",
+                        "TXN_QTY": "1",
+                        "FREQ": "HS",
+                        "DAYS": "1",
+                        "SD": "1",
+                        "DUNIT": "TAB"
+                    },
+                    {
+                        "CTYPE": "健保",
+                        "NAME": "Ligilin 300mg",
+                        "CODE": "OLIT",
+                        "HI_CODE": "AC09299100",
+                        "TYPE": "內用藥錠劑",
+                        "ATC": "N05AN01",
+                        "LICENSE": "",
+                        "DIANAME": "Lithium carbonate 300mg",
+                        "DRUGKIND": "N",
+                        "TXN_QTY": "1",
+                        "FREQ": "QAM&HS",
+                        "DAYS": "1",
+                        "SD": "1",
+                        "DUNIT": "CAP"
+                    },
+                    {
+                        "CTYPE": "健保",
+                        "NAME": "管3 Fluzepam 2mg",
+                        "CODE": "OMOD2",
+                        "HI_CODE": "AC40148100",
+                        "TYPE": "內用藥錠劑",
+                        "ATC": "N05CD03",
+                        "LICENSE": "",
+                        "DIANAME": "Flunitrazepam 2mg",
+                        "DRUGKIND": "3",
+                        "TXN_QTY": "1",
+                        "FREQ": "HS",
+                        "DAYS": "1",
+                        "SD": "1",
+                        "DUNIT": "TAB"
+                    },
+                    {
+                        "CTYPE": "健保",
+                        "NAME": "管3 Fluzepam 2mg",
+                        "CODE": "OMOD2",
+                        "HI_CODE": "AC40148100",
+                        "TYPE": "內用藥錠劑",
+                        "ATC": "N05CD03",
+                        "LICENSE": "",
+                        "DIANAME": "Flunitrazepam 2mg",
+                        "DRUGKIND": "3",
+                        "TXN_QTY": "1",
+                        "FREQ": "HS",
+                        "DAYS": "1",
+                        "SD": "1",
+                        "DUNIT": "TAB"
+                    },
+                    {
+                        "CTYPE": "健保",
+                        "NAME": "Valdoxan 25mg",
+                        "CODE": "OAGO",
+                        "HI_CODE": "BC25451100",
+                        "TYPE": "內用藥錠劑",
+                        "ATC": "N06AX22",
+                        "LICENSE": "",
+                        "DIANAME": "Agomelatine 25mg",
+                        "DRUGKIND": "N",
+                        "TXN_QTY": "1",
+                        "FREQ": "HS",
+                        "DAYS": "1",
+                        "SD": "1",
+                        "DUNIT": "TAB"
+                    }
+                ],
+                "ICD_CODE": "A00.0;A15",
+                "ICD_DESC": "血清型01 cholerae霍亂弧菌所致之霍亂;呼吸道結核病",
+                "diseaseClasses": [
+                    {
+                        "ICD": "A00.0",
+                        "CHT": "血清型01 cholerae霍亂弧菌所致之霍亂"
+                    },
+                    {
+                        "ICD": "A15",
+                        "CHT": "呼吸道結核病"
+                    }
+                ]
+            }
+        ],
+        "old_order": []
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "Data": {
+        "eff_order": [
+            {
+                "MED_BAG_SN": "1140006764202505171141071;7237;ORIT1;0002375555",
+                "DOC": "False",
+                "PATNAME": "False",
+                "SECTNO": "精神科",
+                "order": [
+                    {
+                        "CTYPE": "健保",
+                        "NAME": "Valdoxan 25mg",
+                        "CODE": "OAGO",
+                        "HI_CODE": "BC25451100",
+                        "TYPE": "內用藥錠劑",
+                        "ATC": "A10AX22",
+                        "LICENSE": "",
+                        "DIANAME": "Agomelatine 25mg",
+                        "DRUGKIND": "N",
+                        "TXN_QTY": "1",
+                        "FREQ": "HS",
+                        "DAYS": "5",
+                        "SD": "1",
+                        "DUNIT": "TAB"
+                    }
+                ],
+                "ICD_CODE": "A00.0;A15;J44",
+                "ICD_DESC": "血清型01 cholerae霍亂弧菌所致之霍亂;呼吸道結核病",
+                "diseaseClasses": [
+                    {
+                        "ICD": "A00.0",
+                        "CHT": "血清型01 cholerae霍亂弧菌所致之霍亂"
+                    },
+                    {
+                        "ICD": "A15",
+                        "CHT": "呼吸道結核病"
+                    }
+                ]
+            }
+        ],
+        "old_order": []
+    }
+}

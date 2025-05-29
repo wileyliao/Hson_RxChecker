@@ -1,0 +1,43 @@
+{
+    "Data": {
+        "eff_order": [
+            {
+                "MED_BAG_SN": "1140006764202505171141071;7237;ORIT1;0002375555",
+                "DOC": "False",
+                "PATNAME": "False",
+                "SECTNO": "精神科",
+                "order": [
+                    {
+                        "CTYPE": "健保",
+                        "NAME": "Ligilin 300mg",
+                        "CODE": "OLIT",
+                        "HI_CODE": "AC09299100",
+                        "TYPE": "內用藥錠劑",
+                        "ATC": "C07AB01",
+                        "LICENSE": "",
+                        "DIANAME": "Lithium carbonate 300mg",
+                        "DRUGKIND": "N",
+                        "TXN_QTY": "1",
+                        "FREQ": "QAM&HS",
+                        "DAYS": "4",
+                        "SD": "1",
+                        "DUNIT": "CAP"
+                    }
+                ],
+                "ICD_CODE": "A00.0;A15;J44",
+                "ICD_DESC": "血清型01 cholerae霍亂弧菌所致之霍亂;呼吸道結核病",
+                "diseaseClasses": [
+                    {
+                        "ICD": "A00.0",
+                        "CHT": "血清型01 cholerae霍亂弧菌所致之霍亂"
+                    },
+                    {
+                        "ICD": "A15",
+                        "CHT": "呼吸道結核病"
+                    }
+                ]
+            }
+        ],
+        "old_order": []
+    }
+}

@@ -1,0 +1,49 @@
+
+{
+    "_rule_note": "不具健保身分的病人，精神科最多兩種管制藥品為限，其他科別以不超過一種管制藥品為限",
+    "_rule_details_note": "以病人姓名為外國名字判斷是否具有健保身分",
+    "Data": {
+        "eff_order": [
+            {
+                "MED_BAG_SN": "7;20250421;0001410815;1;STAT;IVD;1;0;20250421003843383",
+                "DOC": "False",
+                "PATNAME": "True",
+                "SECTNO": "心臟科",
+                "order": [
+                    {
+                        "CTYPE": "自費",
+                        "NAME": "Moriamin-SN inj. 200ml",
+                        "CODE": "etyrhsz",
+                        "HI_CODE": "AC24029263",
+                        "TYPE": "內用",
+                        "ATC": "B05BA01",
+                        "LICENSE": "",
+                        "DIANAME": "Moriamin-SN 200ml",
+                        "DRUGKIND": "4",
+                        "TXN_QTY": "3",
+                        "FREQ": "STAT",
+                        "DAYS": "3",
+                        "SD": "1",
+                        "DUNIT": "BTL"
+                    },
+                    {
+                        "CTYPE": "自費",
+                        "NAME": "Glutathione inj. 500mg",
+                        "CODE": "IAGI2",
+                        "HI_CODE": "",
+                        "TYPE": "內用",
+                        "ATC": "V03AB32",
+                        "LICENSE": "",
+                        "DIANAME": "Glutathione 500mg",
+                        "DRUGKIND": "2",
+                        "TXN_QTY": "3",
+                        "FREQ": "STAT",
+                        "DAYS": "3",
+                        "SD": "1",
+                        "DUNIT": "MG"
+                    }
+                ]
+            }
+        ]
+    }
+}

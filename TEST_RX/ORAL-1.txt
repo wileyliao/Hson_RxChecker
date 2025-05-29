@@ -1,0 +1,33 @@
+
+{
+    "_rule_note": "口服藥品開立天數不得為一天",
+    "Data": {
+        "eff_order": [
+            {
+                "MED_BAG_SN": "7;20250421;0001410815;1;STAT;IVD;1;0;20250421003843383",
+                "DOC": "False",
+                "PATNAME": "False",
+                "SECTNO": "心臟科",
+                "BRYPE":"OPD",
+                "order": [
+                    {
+                        "CTYPE": "健保",
+                        "NAME": "Moriamin-SN inj. 200ml",
+                        "CODE": "ikufr",
+                        "HI_CODE": "AC24029263",
+                        "TYPE": "內用",
+                        "ATC": "B05BA01",
+                        "LICENSE": "",
+                        "DIANAME": "Moriamin-SN 200ml",
+                        "DRUGKIND": "4",
+                        "TXN_QTY": "1",
+                        "FREQ": "STAT",
+                        "DAYS": "1",
+                        "SD": "1",
+                        "DUNIT": "BTL"
+                    }
+                ]
+            }
+        ]
+    }
+}

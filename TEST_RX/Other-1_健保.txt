@@ -1,0 +1,32 @@
+
+{
+    "_rule_note": "藥碼 (OMIF)，自費部分限量最多 60 粒且不得超過 30 日，健保給付每日最多 2 粒",
+    "Data": {
+        "eff_order": [
+            {
+                "MED_BAG_SN": "7;20250421;0001410815;1;STAT;IVD;1;0;20250421003843383",
+                "DOC": "False",
+                "PATNAME": "False",
+                "SECTNO": "心臟科",
+                "order": [
+                    {
+                        "CTYPE": "健保",
+                        "NAME": "Moriamin-SN inj. 200ml",
+                        "CODE": "OMIF",
+                        "HI_CODE": "AC24029263",
+                        "TYPE": "內用",
+                        "ATC": "B05BA01",
+                        "LICENSE": "",
+                        "DIANAME": "Moriamin-SN 200ml",
+                        "DRUGKIND": "N",
+                        "TXN_QTY": "6",
+                        "FREQ": "STAT",
+                        "DAYS": "1",
+                        "SD": "3",
+                        "DUNIT": "BTL"
+                    }
+                ]
+            }
+        ]
+    }
+}
