@@ -34,3 +34,22 @@ def airway_disease_checker(rule_state, rx, messages, error_type, error_rule):
                         error_type.append("O其他-藥物選用適切性")
                         error_rule.append(rule)
     return messages, error_type, error_rule
+
+def pregnancy_drug_risk(rule_state, rx, messages, error_type, error_rule):
+    rule = "CLIN-3"
+    drug_risk = ['D', 'X']
+    if rule_state.get(rule) == 'True':
+        for bag in rx.get("Data", {}).get("eff_order", []):
+            if bag.get("PREGNANT", "") == "True":
+                for order in bag.get("order", []):
+                    if order.get("PREGNANCY_LEVEL", "") in drug_risk:
+                        messages.append(
+                            f"{order.get('DIANAME') or order.get('NAME')}，頻次：{order.get('FREQ', '')}，"
+                            f"每次{float(order.get('SD', 0))} {order.get('DUNIT', '')}，總量：{order.get('TXN_QTY', '')} "
+                            f"{order.get('DUNIT', '')}，天數 {int(order.get('DAYS', 0))} 天，"
+                            f"懷孕風險藥物分級為 {order.get('PREGNANCY_LEVEL', '')}。"
+                            f"本處方的病人為孕婦，請醫師審慎評估使用必要性，避免對胎兒造成潛在風險。"
+                            f"電聯醫師修改。")
+                        error_type.append("O其他")
+                        error_rule.append(rule)
+    return messages, error_type, error_rule

@@ -17,7 +17,8 @@ def main(rx, rule_state):
         doctor_cannot_prescribe_self,
         omif_checker,
         diabetes_checker,
-        airway_disease_checker
+        airway_disease_checker,
+        pregnancy_drug_risk
     ]
 
     for func in rule_functions:
