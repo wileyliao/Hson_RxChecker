@@ -5,6 +5,7 @@ WORKDIR /app
 # 複製 requirements.txt 並安裝 Python 套件
 COPY requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r /app/requirements.txt
+RUN ln -snf /usr/share/zoneinfo/Asia/Taipei /etc/localtime && echo "Asia/Taipei" > /etc/timezone
 
 
 # 設定環境變數
