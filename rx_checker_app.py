@@ -30,8 +30,8 @@ def rx_checker():
         log_data["API總耗時s"] = api_response_duration
 
         # 寫入 log 檔
-        with open("log_output.txt", "w", encoding="utf-8") as f:
-            json.dump(log_data, f, ensure_ascii=False, indent=2)
+        with open("log_output.txt", "a", encoding="utf-8") as f:
+            f.write(json.dumps(log_data, ensure_ascii=False) + "\n")
 
         local_prompt = None
         if messages:
