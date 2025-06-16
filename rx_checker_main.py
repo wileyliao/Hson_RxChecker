@@ -2,11 +2,10 @@ from sub_rules_adc import *
 from sub_rules_oral import *
 from sub_rules_omif import *
 from sub_rules_clinical import *
+from log_generate import generate_log
 
-def main(rx, rule_state):
-    error_type = []
-    messages = []
-    error_rule = []
+def main(rx, rule_state, rule_state_duration):
+    error_type, messages, error_rule = [], [], []
 
     rule_functions = [
         oral_drug_checker,
@@ -27,4 +26,7 @@ def main(rx, rule_state):
         except Exception as e:
             print(f"Error in {func.__name__}: {e}")
 
-    return messages, error_type, error_rule
+    triggered_rules = set(error_rule)
+
+    log_data = generate_log(rx, triggered_rules, rule_state, rule_state_duration)
+    return messages, error_type, error_rule, log_data

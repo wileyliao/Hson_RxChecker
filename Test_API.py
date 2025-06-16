@@ -35,3 +35,9 @@ if response.status_code == 200:
     print("回傳資料：\n" + json.dumps(response_data, indent=4, ensure_ascii=False))
 else:
     print("API 請求失敗，狀態碼：", response.status_code)
+    try:
+        print("伺服器回應：", response.json())
+    except Exception as e:
+        print("⚠️ 回應不是 JSON 格式，內容如下：")
+        print(response.text)
+
