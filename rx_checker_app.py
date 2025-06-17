@@ -3,6 +3,13 @@ import time
 from flask import Flask, request, jsonify
 from rx_checker_main import main
 from rule_get import get_rule_state
+import os
+from datetime import datetime
+# === 取得今天日期 ===
+today_str = datetime.now().strftime("%Y%m%d")
+log_dir = "log"
+log_file_path = os.path.join(log_dir, f"{today_str}.txt")
+os.makedirs(log_dir, exist_ok=True)
 
 app = Flask(__name__)
 
@@ -30,7 +37,7 @@ def rx_checker():
         log_data["API總耗時s"] = api_response_duration
 
         # 寫入 log 檔
-        with open("log_output.txt", "a", encoding="utf-8") as f:
+        with open(log_file_path, "a", encoding="utf-8") as f:
             f.write(json.dumps(log_data, ensure_ascii=False) + "\n")
 
         local_prompt = None
