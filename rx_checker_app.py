@@ -6,15 +6,16 @@ from rule_get import get_rule_state
 import os
 from datetime import datetime
 # === 取得今天日期 ===
-today_str = datetime.now().strftime("%Y%m%d")
-log_dir = "log"
-log_file_path = os.path.join(log_dir, f"{today_str}.txt")
-os.makedirs(log_dir, exist_ok=True)
+
 
 app = Flask(__name__)
 
 @app.route('/medgpt', methods=['POST'])
 def rx_checker():
+    today_str = datetime.now().strftime("%Y%m%d")
+    log_dir = "log"
+    log_file_path = os.path.join(log_dir, f"{today_str}.txt")
+    os.makedirs(log_dir, exist_ok=True)
     try:
         total_start = time.time()
 
