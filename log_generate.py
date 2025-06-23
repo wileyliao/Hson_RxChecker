@@ -16,7 +16,8 @@ def generate_log(rx, triggered_rules: set, rule_state: dict,
     bag = rx["Data"]["eff_order"][0]
     med_bag_sn = bag.get("MED_BAG_SN", "UNKNOWN")
     bag_orders = bag.get("order", [])
-
+    age = bag.get("AGE",[])
+    gender = bag.get("GENDER", [])
     drug_logs = []
 
     for order in bag_orders:
@@ -53,6 +54,8 @@ def generate_log(rx, triggered_rules: set, rule_state: dict,
 
     output_data = {
         "藥袋編號": med_bag_sn,
+        "年齡": age,
+        "性別": gender,
         "規則審查": drug_logs,
         "規則狀態取得耗時s": rule_state_duration
         # ⛔ "API總耗時s" 不寫在這裡，由外層補上
