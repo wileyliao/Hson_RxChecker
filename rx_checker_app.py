@@ -14,8 +14,11 @@ app = Flask(__name__)
 def rx_checker():
     today_str = datetime.now().strftime("%Y%m%d")
     log_dir = "log"
+    rx_dir = "rx"
     log_file_path = os.path.join(log_dir, f"{today_str}.txt")
+    rx_file_path = os.path.join(rx_dir, f"{today_str}.txt")
     os.makedirs(log_dir, exist_ok=True)
+    os.makedirs(rx_dir, exist_ok=True)
     try:
         total_start = time.time()
 
@@ -40,6 +43,8 @@ def rx_checker():
         # 寫入 log 檔
         with open(log_file_path, "a", encoding="utf-8") as f:
             f.write(json.dumps(log_data, ensure_ascii=False) + "\n")
+        with open(rx_file_path, "a", encoding="utf-8") as f:
+            f.write(json.dumps(rx, ensure_ascii=False) + "\n")
 
         local_prompt = None
         if messages:

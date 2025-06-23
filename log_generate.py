@@ -53,7 +53,7 @@ def generate_log(rx, triggered_rules: set, rule_state: dict,
 
     output_data = {
         "藥袋編號": med_bag_sn,
-        "藥品列表": drug_logs,
+        "規則審查": drug_logs,
         "規則狀態取得耗時s": rule_state_duration
         # ⛔ "API總耗時s" 不寫在這裡，由外層補上
     }
